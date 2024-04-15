@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card } from 'react-bootstrap'
+import { Card, Col, Row } from 'react-bootstrap'
 
 
 
@@ -73,18 +73,22 @@ const Beers = () => {
 
   return (
 
-    <div className='beer-container'>
+    <div >
       {beers.map((beer) => (
-        <Card style={{ width: '18rem' }}       className='mb-2'
+        <Row>
+          <Col md={6}>
+          <Card style={{ width: '18rem' }}       className='mb-2'
           bg={"danger"}
-          border={"info"}
-        >
+          border={"info"}>
           <Card.Body>
             <Card.Title>{beer.beerName}</Card.Title>
             <Card.Subtitle>{beer.beerStyle}</Card.Subtitle>
             <Card.Text>${beer.price}</Card.Text>
           </Card.Body>
         </Card>
+      </Col>
+         </Row>
+
       ))}
     </div>
 
